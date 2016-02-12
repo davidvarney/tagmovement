@@ -23,32 +23,32 @@
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     {{-- Navigation --}}
-    @include('nav')
+    @include('layouts.nav')
     {{-- Intro Header --}}
-    @include('intro_header')
+    @include('layouts.intro_header')
     {{-- Countdown --}}
-    @include('countdown')
+    @include('layouts.countdown')
     {{-- Action Section --}}
-    @include('action_section')
+    @include('layouts.action_section')
     {{-- About Section --}}
-    @include('about_section')
+    @include('layouts.about_section')
     {{-- MailChimp Section --}}
-    @include('mailchimp')
+    @include('layouts.mailchimp')
     {{-- Project Section --}}
-    @include('project.section')
+    @include('layouts.project.section')
     {{-- Project Modals --}}
-    @include('project.modals')
+    @include('layouts.project.modals')
     {{-- Team Section --}}
-    @include('team_section')
+    @include('layouts.team_section')
     {{-- Sponsors --}}
-    @include('sponsors')
+    @include('layouts.sponsors')
     {{-- Contact Section --}}
-    @include('contact_section')
+    @include('layouts.contact_section')
     {{-- Map Section --}}
-    @include('map_section')
+    @include('layouts.map_section')
     {{-- Footer --}}
-    @include('footer')
+    @include('layouts.footer')
     {{-- JavaScript --}}
-    @include('js')
+    @include('layouts.js')
 </body>
 </html>
