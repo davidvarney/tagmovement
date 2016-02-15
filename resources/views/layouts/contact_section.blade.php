@@ -17,8 +17,8 @@
                 {!! Form::open(array('route' => 'contact_post', 'method' => 'POST', 'name' => 'sentMessage', 'id' => 'contactForm')) !!}
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
-                            <label for="name" class="sr-only control-label">You Name</label>
-                            <input type="text" class="form-control input-lg" placeholder="You Name" id="name" required="" data-validation-required-message="Please enter name">
+                            {!! Form::label('Your Name', array('for' = 'name', 'class' => 'sr-only control-label')) !!}
+                            {!! Form::text('name', old('name'), array('class' => 'form-control input-lg', 'placeholder' => 'Your Name', 'id' => 'name', 'data-validation-required-message' => 'Please enter your name')) !!}
                             <span class="help-block text-danger"></span>
                         </div>
                     </div>
