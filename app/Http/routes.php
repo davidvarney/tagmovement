@@ -27,5 +27,8 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
+    Route::get('/', function () {
+        return view('layouts.app');
+    });
     Route::post('contact', array('as' => 'contact_post', 'uses' => 'ContactController@store'));
 });
