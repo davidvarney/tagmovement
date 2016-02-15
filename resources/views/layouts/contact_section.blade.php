@@ -14,7 +14,7 @@
                 <!-- Contact Form - Enter your email address on line 17 of the mail/contact_me.php file to make this form work. -->
                 <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
                 <!-- NOTE: To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
-                {!! Form::open(array('route' => 'contact_post', 'method' => 'POST', 'name' => 'sentMessage', 'id' => 'contactForm')) !!}
+                {{--{!! Form::open(array('route' => 'contact_post', 'method' => 'POST', 'name' => 'sentMessage', 'id' => 'contactForm')) !!}--}}
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <label for="name" class="sr-only control-label">You Name</label>
@@ -45,7 +45,7 @@
                     </div>
                     <div id="success"></div>
                     <button type="submit" class="btn btn-primary btn-lg">Send</button>
-                {!! Form::close() !!}
+                {{--{!! Form::close() !!}--}}
             </div>
         </div>
     </div>
