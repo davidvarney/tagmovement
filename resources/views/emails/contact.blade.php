@@ -21,8 +21,8 @@
 
                             <p>
                                 <em>– {!! $data['name'] !!}</em><br>
-                                <em>Email - {!! $data['email'] !!})</em><br>
-                                <em>Phone - {!! $data['phone'] !!})</em>
+                                <em>Email - {!! $data['email'] !!}</em><br>
+                                <em>Phone - {!! $data['phone'] !!}</em>
                             </p>
 
                         </td>
