@@ -40,7 +40,7 @@
                 <table>
                     <tr>
                         <td class="content footer" align="center">
-                            <p>Sent by <a href="#">TAG Movement</a>, 4480 Refugee Rd, Ste. 301, Columbus, OH, 43232</p>
+                            <p>Sent by T<span style="color:#A91F23;">A</span>G Movement, 4480 Refugee Rd, Ste. 301, Columbus, OH, 43232</p>
                             <p><a href="mailto:admin@tagmovement.org">admin@tagmovement.org</a></p>
                         </td>
                     </tr>
