@@ -13,19 +13,21 @@ $(function() {
             var email = $("input#email").val();
             var phone = $("input#phone").val();
             var message = $("textarea#message").val();
+            var _token = $("input[type=hidden][name=_token]").val();
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "{!! env('CONTACT_FORM_ROUTE', 'PLEASE ADD \"CONTACT_FORM_ROUTE\" TO YOUR ENVIRONMENT VARIABLES') !!}",
+                url: "/contact",
                 type: "POST",
                 data: {
                     name: name,
                     phone: phone,
                     email: email,
-                    message: message
+                    message: message,
+                    _token: _token
                 },
                 cache: false,
                 success: function() {
