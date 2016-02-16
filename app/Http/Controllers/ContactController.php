@@ -38,6 +38,6 @@ class ContactController extends Controller
             $m->to(env('MAIL_CONTACT_FORM_TO_ADDRESS'))->subject($subject);
         });
 
-        return true;
+        return response()->json(array(true));
     }
 }
