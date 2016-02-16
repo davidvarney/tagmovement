@@ -35,7 +35,7 @@ class ContactController extends Controller
         Mail::send('emails.contact_thank_you', ['data' => $data], function ($m) use ($data, $subject) {
             $m->from('noreply@tagmovement.org');
 
-            $m->to(env('MAIL_CONTACT_FORM_TO_ADDRESS'))->subject($subject);
+            $m->to($data['email'])->subject($subject);
         });
 
         return response()->json(array(true));
