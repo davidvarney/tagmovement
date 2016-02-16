@@ -130,10 +130,12 @@ section {
 }
 .btn-primary:hover,
 .btn-primary:focus {
-    border: 2px solid #1F82B5;
+    /*border: 2px solid #1F82B5;*/
+    border: 2px solid #5D0002;
     outline: 0;
     color: #fff;
-    background-color: #1F82B5;
+    /*background-color: #1F82B5;*/
+    background-color: #5D0002;
 }
 
 .btn-white {
