@@ -19,7 +19,7 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: <?= env('CONTACT_FORM_ROUTE', 'PLEASE ADD \"CONTACT_FORM_ROUTE\" TO YOUR ENVIRONMENT VARIABLES'); ?>,
+                url: "{!! env('CONTACT_FORM_ROUTE', 'PLEASE ADD \"CONTACT_FORM_ROUTE\" TO YOUR ENVIRONMENT VARIABLES') !!}",
                 type: "POST",
                 data: {
                     name: name,
