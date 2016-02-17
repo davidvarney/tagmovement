@@ -12,7 +12,8 @@ html, body {
 }
 
 body {
-    font-family: "open sans",Arial,sans-serif;
+    /*font-family: "open sans",Arial,sans-serif;*/
+    font-family: 'Montserrat', sans-serif;
     color: #000;
     background-color: #fff;
 }
