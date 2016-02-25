@@ -26,6 +26,8 @@
     @include('layouts.nav')
     {{-- Intro Header --}}
     @include('layouts.intro_header')
+    {{-- Registration Modal --}}
+    @include('layouts.registration_modal')
     {{-- Countdown --}}
     @include('layouts.countdown')
     {{-- Action Section --}}

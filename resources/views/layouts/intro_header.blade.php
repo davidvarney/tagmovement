@@ -9,7 +9,7 @@
             <div class="col-md-5">
                 <ul class="list-inline lead">
                     <li>
-                        <a href="#about" class="btn btn-primary btn-register-top page-scroll">REGISTER NOW!</a>
+                        <a data-target="#registrationModal1" data-toggle="modal" class="btn btn-primary btn-register-top page-scroll">REGISTER NOW!</a>
                     </li>
                 </ul>
                 <ul class="list-inline lead">
