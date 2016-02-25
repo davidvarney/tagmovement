@@ -16,7 +16,7 @@
             <ul class="list-inline lead">
                 <li><a href="https://www.facebook.com/trainingageneration" target="_blank"><i class="fa fa-facebook fa-fw fa-2x color"></i></a></li>
                 <li><a href="https://twitter.com/tagmovementcbus" target="_blank"><i class="fa fa-twitter fa-fw fa-2x color"></i></a></li>
-                <li><a href="#action"><i class="fa fa-instagram fa-fw fa-2x color"></i></a></li>
+                <li><a href="https://www.instagram.com/tagmovement/" target="_blank"><i class="fa fa-instagram fa-fw fa-2x color"></i></a></li>
                 <li><a href="https://www.youtube.com/channel/UCSs-mYyL5Yf0cnGVP6h9Avw" target="_blank"><i class="fa fa-youtube fa-fw fa-2x color"></i></a></li>
             </ul>
         </div>
