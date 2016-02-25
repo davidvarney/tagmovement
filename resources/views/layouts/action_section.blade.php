@@ -13,12 +13,11 @@
         </div>
         <div class="col-lg-6 col-md-12 split-padding2">
             <h5 class="headerline">Follow Us On Social Media</h5>
-            <p>Lorem ipsum dolor sit amet consecte tur adipiscingtitor diam, a accumsan justo laoreet. Lorem ipsum dolor sit amet consecte tur ipsum dolor sit amet consecte tur adipiscingtitor diam, a accumsan justo laoreet.</p>
             <ul class="list-inline lead">
-                <li><a href="/"><i class="fa fa-facebook fa-fw fa-2x color"></i></a></li>
-                <li><a href="/"><i class="fa fa-twitter fa-fw fa-2x color"></i></a></li>
-                <li><a href="/"><i class="fa fa-youtube fa-fw fa-2x color"></i></a></li>
-                <li><a href="/"><i class="fa fa-instagram fa-fw fa-2x color"></i></a></li>
+                <li><a href="https://www.facebook.com/trainingageneration" target="_blank"><i class="fa fa-facebook fa-fw fa-2x color"></i></a></li>
+                <li><a href="https://twitter.com/tagmovementcbus" target="_blank"><i class="fa fa-twitter fa-fw fa-2x color"></i></a></li>
+                <li><a href="#action"><i class="fa fa-instagram fa-fw fa-2x color"></i></a></li>
+                <li><a href="https://www.youtube.com/channel/UCSs-mYyL5Yf0cnGVP6h9Avw" target="_blank"><i class="fa fa-youtube fa-fw fa-2x color"></i></a></li>
             </ul>
         </div>
     </div>
