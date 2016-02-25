@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-lg-3 col-md-6 split-padding">
             <h5 class="headerline">Hero in a Half-Shirt Combine</h5>
-            <p><a href="/" class="btn btn-default btn-lg">DONATE</a></p>
+            <p><a href="/" class="btn btn-default btn-lg">REGISTER NOW!</a></p>
             <p>Our Leadership and Athletic Combine, hopes to provide an opportunity for youth to be mentored and inspired to reach their full potential.</p>
         </div>
         <div class="col-lg-3 col-md-6 split-padding0">
