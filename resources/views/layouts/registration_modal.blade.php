@@ -11,6 +11,8 @@
                     <div class="col-md-8 col-md-offset-2">
                         form here
                         {!! Form::open(array('route' => 'registration_store', 'method' => 'POST', 'class' => '')) !!}
+
+                        {!! Form::close(); !!}
                     </div>
                 </div>
                 <div class="row">
