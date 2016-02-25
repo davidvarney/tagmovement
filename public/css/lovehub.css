@@ -144,6 +144,15 @@ section {
     background-color: #411113;
 }
 
+.btn-register-top {
+    padding: 18px 28px;
+    font-size: 24px !important;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+
 .btn-white {
     border: 2px solid #fff;
     outline: 0;
