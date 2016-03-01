@@ -314,7 +314,8 @@ a:hover .fa-circle {
     text-shadow: 0 1px 3px rgba(0,0,0,.2);
     height: 100%;
     /*background: #000 url(../img/5.jpg)  no-repeat center center scroll;*/
-    background: #000 url(../img/sample_image_scaled.jpg)  no-repeat center center scroll;
+    /*background: #000 url(../img/sample_image_scaled.jpg)  no-repeat center center scroll;*/
+    background: #000 url(../img/intro_header_javar.jpg)  no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
