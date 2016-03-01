@@ -16,6 +16,9 @@ class RegistrationController extends Controller
     {
         $data = $request->all();
 
+        // Make sure the birthdate is properly formatted
+        $data['birthdate'] = date("Y-m-d", strtotime($data['birthdate']));
+
         $registration = Registration::create($data);
 
         return response()->json(array(true));
