@@ -27,7 +27,6 @@ class CreateRegistrationRequest extends Request
             'first_name' => 'required',
             'last_name' => 'required',
             'address_1' => 'required',
-            'address_2' => 'required',
             'city' => 'required',
             'state' => 'required',
             'zip' => 'required',
