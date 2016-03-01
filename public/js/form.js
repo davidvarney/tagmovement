@@ -199,12 +199,21 @@ $(function() {
                     //clear all fields
                     $('#contactForm').trigger("reset");
                 },
-                error: function() {
+                error: function(msg) {
+                    var msg_obj = msg.responseJSON;
+                    var keys = Object.keys(msg_obj);
+                    var error_output = '<ul>';
+                    for (var i=0;i<keys.length;i++) {
+                        var obj_name = keys[i];
+                        error_output += '<li>' + msg_obj[obj_name][0] + '</li>';
+                    }
+                    error_output += '</ul>';
                     // Fail message
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Please make sure the form is completely filled out or use the contact form to reach us and let us know that you're having issues.");
+                    $('#success > .alert-danger').append("<p>Please make sure the form is completely filled out or use the contact form to reach us and let us know that you're having issues.</p><br>");
+                    $('#success > .alert-danger').append("<p>Errors Found:<br><br>" + error_output + "</p>");
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");

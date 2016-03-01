@@ -16,6 +16,8 @@ class RegistrationController extends Controller
     {
         $data = $request->all();
 
-        dd($data);
+        $registration = Registration::create($data);
+
+        return response()->json(array(true));
     }
 }
