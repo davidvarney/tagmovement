@@ -598,7 +598,7 @@ a.project-link:hover {
     left: 40px;
 }
 .project-modal button {
-    margin-top: 20px;
+    /*margin-top: 20px;*/
     border: 2px solid #000;
     color: #000;
 }

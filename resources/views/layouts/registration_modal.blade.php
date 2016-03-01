@@ -456,7 +456,7 @@
                             </div>
                         </div><!-- END of Agreements -->
                         <div class="row">
-                            <div class="col-md-8 col-md-offset-2">
+                            <div class="col-md-5 col-md-offset-2">
                                 <div id="success"></div>
                                 {!! Form::button('Send', array('type' => 'submit', 'class' => 'btn btn-primary btn-lg')) !!}
                             </div>
