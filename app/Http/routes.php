@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('layouts.app');
-});
+});*/
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +27,13 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/', function () {
+    /*Route::get('/', function () {
         return view('layouts.app');
-    });
+    });*/
+    Route::get('/', array('as' => 'home', 'uses' => 'HomeController@home'));
+
+    // CONTACT FORM
     Route::post('contact', array('as' => 'contact_post', 'uses' => 'ContactController@store'));
+    // REGISTRATION FORM
     Route::post('registration', array('as' => 'registration_store', 'uses' => 'RegistrationControlelr@store'));
 });

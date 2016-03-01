@@ -95,7 +95,7 @@ section {
     background-color: #c00;
 }
 
-.label, input, .btn, textarea {
+.label, input, .btn, select, textarea {
     border-radius: 0!important;
 }
 

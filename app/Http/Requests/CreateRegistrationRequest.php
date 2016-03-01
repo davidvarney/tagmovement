@@ -48,7 +48,6 @@ class CreateRegistrationRequest extends Request
             'text_agreement' => 'required',
             'event_waiver_agreement' => 'required',
             'shirt_size' => 'required',
-            'registrant_verify' => 'required',
             'coach_name' => 'required'
         ];
     }

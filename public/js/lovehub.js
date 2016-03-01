@@ -44,3 +44,11 @@ $('#clock').countdown('2016/03/12 08:00:00').on('update.countdown', function(eve
     + '<div><span>%M</span>min</div>'
     + '<div><span>%S</span>sec</div>'));
 });
+
+// Registration Form Masks
+jQuery("#zip").mask("00000");
+jQuery("#phone").mask("(000) 000-0000");
+jQuery("#birthdate").mask("00/00/0000");
+jQuery("#coach_phone").mask("(000) 000-0000");
+jQuery("#guardian_1_phone").mask("(000) 000-0000");
+jQuery("#guardian_2_phone").mask("(000) 000-0000");
