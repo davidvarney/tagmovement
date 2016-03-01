@@ -15,32 +15,32 @@
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             {!! Form::label('name', 'Your Name', array('for' => 'name', 'class' => 'sr-only control-label')) !!}
-                            {!! Form::text('name', '', array('class' => 'form-control input-lg', 'placeholder' => 'Your Name', 'id' => 'name', 'data-validation-required-message' => 'Please enter your name')) !!}
+                            {!! Form::text('name', '', array('class' => 'form-control input-lg', 'placeholder' => 'Your Name', 'id' => 'contact_name', 'data-validation-required-message' => 'Please enter your name')) !!}
                             <span class="help-block text-danger"></span>
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             {!! Form::label('name', 'Your Email', array('for' => 'email', 'class' => 'sr-only control-label')) !!}
-                            {!! Form::text('name', '', array('class' => 'form-control input-lg', 'placeholder' => 'Your Email', 'id' => 'email', 'data-validation-required-message' => 'Please enter email')) !!}
+                            {!! Form::text('name', '', array('class' => 'form-control input-lg', 'placeholder' => 'Your Email', 'id' => 'contact_email', 'data-validation-required-message' => 'Please enter email')) !!}
                             <span class="help-block text-danger"></span>
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             {!! Form::label('phone', 'Your Phone', array('for' => 'phone', 'class' => 'sr-only control-label')) !!}
-                            {!! Form::text('phone', '', array('class' => 'form-control input-lg', 'placeholder' => 'Your Phone', 'id' => 'phone', 'data-validation-required-message' => 'Please enter phone')) !!}
+                            {!! Form::text('phone', '', array('class' => 'form-control input-lg', 'placeholder' => 'Your Phone', 'id' => 'contact_phone', 'data-validation-required-message' => 'Please enter phone')) !!}
                             <span class="help-block text-danger"></span>
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             {!! Form::label('message', 'Message', array('for' => 'message', 'class' => 'sr-only control-label')) !!}
-                            {!! Form::textarea('message', '', array('rows' => '2', 'class' => 'form-control input-lg', 'placeholder' => 'Please enter a message', 'id' => 'message', 'data-validation-required-message' => 'Please enter a message', 'aria-invalid' => 'false')) !!}
+                            {!! Form::textarea('message', '', array('rows' => '2', 'class' => 'form-control input-lg', 'placeholder' => 'Please enter a message', 'id' => 'contact_message', 'data-validation-required-message' => 'Please enter a message', 'aria-invalid' => 'false')) !!}
                             <span class="help-block text-danger"></span>
                         </div>
                     </div>
-                    <div id="success"></div>
+                    <div id="contact_success"></div>
                     {!! Form::button('Send', array('type' => 'submit', 'class' => 'btn btn-primary btn-lg')) !!}
                 {!! Form::close() !!}
             </div>

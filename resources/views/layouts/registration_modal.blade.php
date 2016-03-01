@@ -1,8 +1,13 @@
 <div class="work">
     <div class="project-modal modal fade" id="registrationModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
+            {{--<div class="close-modal" data-dismiss="modal">
                 <i class="fa fa-times"></i>
+            </div>--}}
+            <div class="row">
+                <div class="col-md-4 col-md-offset-6">
+                    <button type="button" class="btn btn-default btn-lg" data-dismiss="modal">CLOSE</button>
+                </div>
             </div>
             <div class="container">
                 <h2>Registration</h2>
@@ -80,7 +85,7 @@
                                             </div>
                                             <div class="col-md-8">
                                                 {!! Form::label('email', 'Email', array('for' => 'email', 'class' => 'sr-only control-label')) !!}
-                                                {!! Form::text('name', '', array('class' => 'form-control input-lg', 'placeholder' => 'Email', 'id' => 'email', 'data-validation-required-message' => 'Please enter Athlete\'s email')) !!}
+                                                {!! Form::text('email', '', array('class' => 'form-control input-lg', 'placeholder' => 'Email', 'id' => 'email', 'data-validation-required-message' => 'Please enter Athlete\'s email')) !!}
                                                 <span class="help-block text-danger"></span>
                                             </div>
                                         </div>
@@ -420,16 +425,46 @@
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-md-offset-2">
+                                <div class="control-group">
+                                    <div class="form-group floating-label-form-group controls">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="checkbox">
+                                                    <label class="control-label">
+                                                        {!! Form::checkbox('event_waiver_agreement', 1, null, array('id' => 'event_waiver_agreement')) !!} I agree with the Waiver
+                                                    </label>
+                                                </div>
+                                                <span class="help-block text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="form-group floating-label-form-group controls">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="checkbox">
+                                                    <label class="control-label">
+                                                        {!! Form::checkbox('text_agreement', 1, null, array('id' => 'text_agreement')) !!} I want updates via text messaging
+                                                    </label>
+                                                </div>
+                                                <span class="help-block text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div><!-- END of Agreements -->
-                        <div class="col-md-8 col-md-offset-2">
-                            <div id="success"></div>
-                            {!! Form::button('Send', array('type' => 'submit', 'class' => 'btn btn-primary btn-lg')) !!}
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
+                                <div id="success"></div>
+                                {!! Form::button('Send', array('type' => 'submit', 'class' => 'btn btn-primary btn-lg')) !!}
+                            </div>
                         </div>
                     {!! Form::close() !!}
                 </div>
                 <div class="row">
-                    <div class="col-md-4 col-md-offset-8">
+                    <div class="col-md-4 col-md-offset-6">
                         <button type="button" class="btn btn-default btn-lg" data-dismiss="modal">CLOSE</button>
                     </div>
                 </div>

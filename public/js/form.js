@@ -9,10 +9,10 @@ $(function() {
         submitSuccess: function($form, event) {
             event.preventDefault(); // prevent default submit behaviour
             // get values from FORM
-            var name = $("input#name").val();
-            var email = $("input#email").val();
-            var phone = $("input#phone").val();
-            var message = $("textarea#message").val();
+            var name = $("input#contact_name").val();
+            var email = $("input#contact_email").val();
+            var phone = $("input#contact_phone").val();
+            var message = $("textarea#contact_message").val();
             var _token = $("input[type=hidden][name=_token]").val();
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
@@ -32,12 +32,12 @@ $(function() {
                 cache: false,
                 success: function() {
                     // Success message
-                    $('#success').html("<div class='alert alert-success'>");
-                    $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                    $('#contact_success').html("<div class='alert alert-success'>");
+                    $('#contact_success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
-                    $('#success > .alert-success')
+                    $('#contact_success > .alert-success')
                         .append("<strong>Your message has been sent. </strong>");
-                    $('#success > .alert-success')
+                    $('#contact_success > .alert-success')
                         .append('</div>');
 
                     //clear all fields
@@ -45,11 +45,11 @@ $(function() {
                 },
                 error: function() {
                     // Fail message
-                    $('#success').html("<div class='alert alert-danger'>");
-                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                    $('#contact_success').html("<div class='alert alert-danger'>");
+                    $('#contact_success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
-                    $('#success > .alert-danger').append('</div>');
+                    $('#contact_success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
+                    $('#contact_success > .alert-danger').append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");
                 },
@@ -69,32 +69,120 @@ $(function() {
 // Registration Form Script
 $(function() {
 
-    $("#registrationForm input,#registrationForm textarea").jqBootstrapValidation({
+    $("#registrationForm input,#registrationForm textarea, #registrationForm select").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
             // additional error messages or events
         },
         submitSuccess: function($form, event) {
+            //console.log('here');
             event.preventDefault(); // prevent default submit behaviour
             // get values from FORM
-            var name = $("input#name").val();
-            var email = $("input#email").val();
-            var phone = $("input#phone").val();
-            var message = $("textarea#message").val();
-            var _token = $("input[type=hidden][name=_token]").val();
-            var firstName = name; // For Success/Failure Message
+            var first_name              = $("input#first_name").val();
+            var last_name               = $("input#last_name").val();
+            var address_1               = $("input#address_1").val();
+            var address_2               = $("input#address_2").val();
+            var city                    = $("input#city").val();
+            var state                   = $("select#state").val();
+            var zip                     = $("input#zip").val();
+            var phone                   = $("input#phone").val();
+            var email                   = $("input#email").val();
+            var shirt_size              = $("select#shirt_size").val();
+            var gender                  = $("select#gender").val();
+            var birthdate               = $("input#birthdate").val();
+            var graduation_year         = $("select#graduation_year").val();
+            var high_school_state       = $("select#high_school_state").val();
+            var high_school_name        = $("input#high_school_name").val();
+            var gpa                     = $("input#gpa").val();
+            var sat_score               = $("input#sat_score").val();
+            var act_score               = $("input#act_score").val();
+            var position                = $("input#position").val();
+            var height_feet             = $("input#height_feet").val();
+            var height_inches           = $("input#height_inches").val();
+            var weight                  = $("input#weight").val();
+            var coach_name              = $("input#coach_name").val();
+            var coach_phone             = $("input#coach_phone").val();
+            var coach_email             = $("input#coach_email").val();
+            var jersey_number           = $("input#jersey_number").val();
+            var hudl_email              = $("input#hudl_email").val();
+            var hudl_film_link          = $("input#hudl_film_link").val();
+            var offensive_stats         = $("textarea#offensive_stats").val();
+            var defensive_stats         = $("textarea#defensive_stats").val();
+            var postseason_honors       = $("textarea#postseason_honors").val();
+            var favorite_colleges       = $("textarea#favorite_colleges").val();
+            var college_offers          = $("textarea#college_offers").val();
+            var twitter_link            = $("input#twitter_link").val();
+            var facebook_link           = $("input#facebook_link").val();
+            var instagram_link          = $("input#instagram_link").val();
+            var snapchat_name           = $("input#snapchat_name").val();
+            var youtube_link            = $("input#youtube_link").val();
+            var guardian_1_first_name   = $("input#guardian_1_first_name").val();
+            var guardian_1_last_name    = $("input#guardian_1_last_name").val();
+            var guardian_1_phone        = $("input#guardian_1_phone").val();
+            var guardian_1_email        = $("input#guardian_1_email").val();
+            var guardian_2_first_name   = $("input#guardian_2_first_name").val();
+            var guardian_2_last_name    = $("input#guardian_2_last_name").val();
+            var guardian_2_phone        = $("input#guardian_2_phone").val();
+            var guardian_2_email        = $("input#guardian_2_email").val();
+            var event_waiver_agreement  = $("input#event_waiver_agreement").val();
+            var text_agreement          = $("input#text_agreement").val();
+            var _token                  = $("input[type=hidden][name=_token]").val();
+            /*var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
-            }
+            }*/
             $.ajax({
-                url: "/contact",
+                url: "/registration",
                 type: "POST",
                 data: {
-                    name: name,
+                    first_name: first_name,
+                    last_name: last_name,
+                    address_1: address_1,
+                    address_2: address_2,
+                    city: city,
+                    state: state,
+                    zip: zip,
                     phone: phone,
                     email: email,
-                    message: message,
+                    shirt_size: shirt_size,
+                    gender: gender,
+                    birthdate: birthdate,
+                    graduation_year: graduation_year,
+                    high_school_state: high_school_state,
+                    high_school_name: high_school_name,
+                    gpa: gpa,
+                    sat_score: sat_score,
+                    act_score: act_score,
+                    position: position,
+                    height: (parseInt(height_feet) * 12) + parseInt(height_inches),
+                    weight: weight,
+                    coach_name: coach_name,
+                    coach_phone: coach_phone,
+                    coach_email: coach_email,
+                    jersey_number: jersey_number,
+                    hudl_email: hudl_email,
+                    hudl_film_link: hudl_film_link,
+                    offensive_stats: offensive_stats,
+                    defensive_stats: defensive_stats,
+                    postseason_honors: postseason_honors,
+                    favorite_colleges: favorite_colleges,
+                    college_offers: college_offers,
+                    twitter_link: twitter_link,
+                    facebook_link: facebook_link,
+                    instagram_link: instagram_link,
+                    snapchat_name: snapchat_name,
+                    youtube_link: youtube_link,
+                    guardian_1_first_name: guardian_1_first_name,
+                    guardian_1_last_name: guardian_1_last_name,
+                    guardian_1_phone: guardian_1_phone,
+                    guardian_1_email: guardian_1_email,
+                    guardian_2_first_name: guardian_2_first_name,
+                    guardian_2_last_name: guardian_2_last_name,
+                    guardian_2_phone: guardian_2_phone,
+                    guardian_2_email: guardian_2_email,
+                    event_waiver_agreement: event_waiver_agreement,
+                    text_agreement: text_agreement,
                     _token: _token
                 },
                 cache: false,
@@ -104,7 +192,7 @@ $(function() {
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
                     $('#success > .alert-success')
-                        .append("<strong>Your message has been sent. </strong>");
+                        .append("<strong>Your registration has been submitted. </strong>");
                     $('#success > .alert-success')
                         .append('</div>');
 
@@ -116,7 +204,7 @@ $(function() {
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
+                    $('#success > .alert-danger').append("<strong>It seems that there was an issue submitting your registration! Please use the contact form to reach us and let us know that you're having issues.");
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");

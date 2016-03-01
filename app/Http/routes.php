@@ -35,5 +35,5 @@ Route::group(['middleware' => ['web']], function () {
     // CONTACT FORM
     Route::post('contact', array('as' => 'contact_post', 'uses' => 'ContactController@store'));
     // REGISTRATION FORM
-    Route::post('registration', array('as' => 'registration_store', 'uses' => 'RegistrationControlelr@store'));
+    Route::post('registration', array('as' => 'registration_store', 'uses' => 'RegistrationController@store'));
 });

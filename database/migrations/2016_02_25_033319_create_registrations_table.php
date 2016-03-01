@@ -47,7 +47,7 @@ class CreateRegistrationsTable extends Migration
             $table->string('instagram_link')->nullable();
             $table->string('snapchat_name')->nullable();
             $table->string('youtube_link')->nullable();
-            $table->boolean('text_agreement');
+            $table->boolean('text_agreement')->nullable();
             $table->boolean('event_waiver_agreement');
             $table->string('shirt_size');
             $table->string('hudl_email')->nullable();
