@@ -204,7 +204,7 @@ $(function() {
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
-                    $('#success > .alert-danger').append("<strong>It seems that there was an issue submitting your registration! Please use the contact form to reach us and let us know that you're having issues.");
+                    $('#success > .alert-danger').append("<strong>Please make sure the form is completely filled out or use the contact form to reach us and let us know that you're having issues.");
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");
