@@ -27,10 +27,13 @@
 */
 
 Route::group(['middleware' => ['web']], function () {
+    Route::auth();
     /*Route::get('/', function () {
         return view('layouts.app');
     });*/
     Route::get('/', array('as' => 'home', 'uses' => 'HomeController@home'));
+
+    Route::get('admin', array('as' => 'admin_index', 'uses' => 'Admin\AdminController@index'));
 
     // CONTACT FORM
     Route::post('contact', array('as' => 'contact_post', 'uses' => 'ContactController@store'));
