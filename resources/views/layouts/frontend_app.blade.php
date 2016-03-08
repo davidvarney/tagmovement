@@ -12,7 +12,7 @@
     <title>{!! env('APP_TITLE') !!}</title>
 
     <!-- CSS -->
-    @include('layouts.css')
+    @include('frontend.css')
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,34 +23,34 @@
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     {{-- Navigation --}}
-    @include('layouts.nav')
+    @include('frontend.nav')
     {{-- Intro Header --}}
-    @include('layouts.intro_header')
+    @include('frontend.intro_header')
     {{-- Registration Modal --}}
-    @include('layouts.registration_modal')
+    @include('frontend.registration_modal')
     {{-- Countdown --}}
-    @include('layouts.countdown')
+    @include('frontend.countdown')
     {{-- Action Section --}}
-    @include('layouts.action_section')
+    @include('frontend.action_section')
     {{-- About Section --}}
-    @include('layouts.about_section')
+    @include('frontend.about_section')
     {{-- MailChimp Section --}}
-    @include('layouts.mailchimp')
+    @include('frontend.mailchimp')
     {{-- Project Section --}}
-    @include('layouts.project.section')
+    @include('frontend.project.section')
     {{-- Project Modals --}}
-    @include('layouts.project.modals')
+    @include('frontend.project.modals')
     {{-- Team Section --}}
-    @include('layouts.team_section')
+    @include('frontend.team_section')
     {{-- Sponsors --}}
-    @include('layouts.sponsors')
+    @include('frontend.sponsors')
     {{-- Contact Section --}}
-    @include('layouts.contact_section')
+    @include('frontend.contact_section')
     {{-- Map Section --}}
-    @include('layouts.map_section')
+    @include('frontend.map_section')
     {{-- Footer --}}
-    @include('layouts.footer')
+    @include('frontend.footer')
     {{-- JavaScript --}}
-    @include('layouts.js')
+    @include('frontend.js')
 </body>
 </html>

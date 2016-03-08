@@ -18,7 +18,7 @@ class HomeController extends Controller
     public function home()
     {
 
-        return view('layouts.app', array(
+        return view('layouts.frontend_app', array(
             'states' => FormHelper::get_states(),
             'graduation_years' => FormHelper::get_graduation_years(),
             'genders' => FormHelper::get_genders(),
