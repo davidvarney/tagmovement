@@ -22,9 +22,9 @@
                 <li>
                     <a class="page-scroll" href="#about">WHO WE ARE</a>
                 </li>
-                <li>
+                {{--<li>
                     <a class="page-scroll" href="#project">Our Project</a>
-                </li>
+                </li>--}}
                 <li>
                     <a class="page-scroll" href="#team">Team</a>
                 </li>

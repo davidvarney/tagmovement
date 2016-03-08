@@ -37,9 +37,9 @@
     {{-- MailChimp Section --}}
     @include('frontend.mailchimp')
     {{-- Project Section --}}
-    @include('frontend.project.section')
+    {{--@include('frontend.project.section')--}}
     {{-- Project Modals --}}
-    @include('frontend.project.modals')
+    {{--@include('frontend.project.modals')--}}
     {{-- Team Section --}}
     @include('frontend.team_section')
     {{-- Sponsors --}}
