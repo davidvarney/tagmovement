@@ -50,6 +50,14 @@ Route::group(['middleware' => ['web']], function () {
     Route::put('admin/users/{user_id}/update', array('as' => 'admin_users_update', 'uses' => 'Admin\UsersController@update', 'middleware' => 'permission:can_edit_users'));
     Route::delete('admin/users/{user_id}/destroy', array('as' => 'admin_users_destroy', 'uses' => 'Admin\UsersController@destroy', 'middleware' => 'permission:can_delete_users'));
 
+    // Admin Events
+    Route::get('admin/events', array('as' => 'admin_events_index', 'uses' => 'Admin\EventsController@index', 'middleware' => 'permission:can_view_events'));
+    Route::get('admin/events/create', array('as' => 'admin_events_create', 'uses' => 'Admin\EventsController@create', 'middleware' => 'permission:can_add_events'));
+    Route::post('admin/events/store', array('as' => 'admin_events_store', 'uses' => 'Admin\EventsController@store', 'middleware' => 'permission:can_add_events'));
+    Route::get('admin/events/{event_id}/edit', array('as' => 'admin_events_edit', 'uses' => 'Admin\EventsController@edit', 'middleware' => 'permission:can_edit_events'));
+    Route::put('admin/events/{event_id}/update', array('as' => 'admin_events_update', 'uses' => 'Admin\EventsController@update', 'middleware' => 'permission:can_edit_events'));
+    Route::delete('admin/events/{event_id}/destroy', array('as' => 'admin_events_destroy', 'uses' => 'Admin\EventsController@destroy', 'middleware' => 'permission:can_delete_events'));
+
     // Admin Registrations
     //Route::get('admin/users', array('as' => 'admin_users_index', 'uses' => 'Admin\UsersController@index'));
 });
