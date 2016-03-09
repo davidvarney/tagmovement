@@ -80,6 +80,7 @@ $(function() {
             // get values from FORM
             var first_name              = $("input#first_name").val();
             var last_name               = $("input#last_name").val();
+            var event_id                = $("input#event_id").val();
             var address_1               = $("input#address_1").val();
             var address_2               = $("input#address_2").val();
             var city                    = $("input#city").val();
@@ -140,6 +141,7 @@ $(function() {
                     last_name: last_name,
                     address_1: address_1,
                     address_2: address_2,
+                    event_id: event_id,
                     city: city,
                     state: state,
                     zip: zip,
