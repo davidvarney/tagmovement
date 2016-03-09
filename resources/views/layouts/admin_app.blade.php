@@ -52,7 +52,9 @@
 
                     @else
                         <li><a href="{{ url('/admin/athletes') }}">Athletes</a></li>
-                        <li><a href="{{ url('/admin/events') }}">Events</a></li>
+                        @if (Auth::user()->hasRole(['admin', 'manager']))
+                            <li><a href="{{ url('/admin/events') }}">Events</a></li>
+                        @endif
                         <li><a href="{{ url('/admin/registrations') }}">Registrations</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -60,11 +62,13 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="{{ url('/admin/stations') }}">
-                                        <i class="fa fa-btn fa-eye"></i>View
-                                    </a>
-                                </li>
+                                @if (Auth::user()->hasRole(['admin', 'manager']))
+                                    <li>
+                                        <a href="{{ url('/admin/stations') }}">
+                                            <i class="fa fa-btn fa-eye"></i>View
+                                        </a>
+                                    </li>
+                                @endif
                                 <li>
                                     <a href="{{ url('admin/station_data') }}">
                                         <i class="fa fa-btn fa-database"></i>Station Data
@@ -72,7 +76,9 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="{{ url('/admin/users') }}">Users</a></li>
+                        @if (Auth::user()->hasRole(['admin', 'manager']))
+                            <li><a href="{{ url('/admin/users') }}">Users</a></li>
+                        @endif
                     @endif
                 </ul>
 
