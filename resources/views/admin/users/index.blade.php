@@ -21,6 +21,7 @@
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Email</th>
+                                <th>Role</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -30,6 +31,7 @@
                                     <td>{!! $user->id !!}</td>
                                     <td>{!! $user->name !!}</td>
                                     <td>{!! $user->email !!}</td>
+                                    <td>{!! $user->roles()->first()->display_name !!}</td>
                                     <td>
                                         {{--@if (Auth::user()->level() > 4)--}}
 
