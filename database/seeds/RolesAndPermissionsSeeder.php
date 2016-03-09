@@ -48,7 +48,11 @@ class RolesAndPermissionsSeeder extends Seeder {
                 'can_edit_athletes',
                 'can_add_athletes',
                 'can_delete_athletes',
-                'can_view_athletes'
+                'can_view_athletes',
+                'can_edit_station_data',
+                'can_add_station_data',
+                'can_delete_station_data',
+                'can_view_station_data'
             ) // optional
         ],
 
@@ -75,7 +79,11 @@ class RolesAndPermissionsSeeder extends Seeder {
                 'can_edit_athletes',
                 'can_add_athletes',
                 'can_delete_athletes',
-                'can_view_athletes'
+                'can_view_athletes',
+                'can_edit_station_data',
+                'can_add_station_data',
+                'can_delete_station_data',
+                'can_view_station_data'
             ) // optional
         ],
 
@@ -91,7 +99,11 @@ class RolesAndPermissionsSeeder extends Seeder {
                 'can_view_registrations',
                 'can_edit_athletes',
                 'can_add_athletes',
-                'can_view_athletes'
+                'can_view_athletes',
+                'can_edit_station_data',
+                'can_add_station_data',
+                'can_delete_station_data',
+                'can_view_station_data'
             ) // optional
         ],
     ];
@@ -120,7 +132,11 @@ class RolesAndPermissionsSeeder extends Seeder {
         'can_edit_athletes' => [],
         'can_add_athletes' => [],
         'can_delete_athletes' => [],
-        'can_view_athletes' => []
+        'can_view_athletes' => [],
+        'can_edit_station_data' => [],
+        'can_add_station_data' => [],
+        'can_delete_station_data' => [],
+        'can_view_station_data' => []
     ];
 
 

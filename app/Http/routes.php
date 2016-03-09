@@ -73,4 +73,12 @@ Route::group(['middleware' => ['web']], function () {
     // Admin Athletes
     Route::get('admin/athletes', array('as' => 'admin_athletes_index', 'uses' => 'Admin\AthletesController@index', 'middleware' => 'permission:can_view_athletes'));
     Route::post('admin/athletes/store', array('as' => 'admin_athletes_store', 'uses' => 'Admin\AthletesController@store', 'middleware' => 'permission:can_add_athletes'));
+
+    // Admin Station Data
+    Route::get('admin/station_data', array('as' => 'admin_station_data_index', 'uses' => 'Admin\StationDataController@index', 'middleware' => 'permission:can_view_station_data'));
+    Route::get('admin/station_data/create', array('as' => 'admin_station_data_create', 'uses' => 'Admin\StationDataController@create', 'middleware' => 'permission:can_add_station_data'));
+    Route::post('admin/station_data/store', array('as' => 'admin_station_data_store', 'uses' => 'Admin\StationDataController@store', 'middleware' => 'permission:can_add_station_data'));
+    Route::get('admin/station_data/{station_data_id}/edit', array('as' => 'admin_station_data_edit', 'uses' => 'Admin\StationDataController@edit', 'middleware' => 'permission:can_edit_station_data'));
+    Route::put('admin/station_data/{station_data_id}/update', array('as' => 'admin_station_data_update', 'uses' => 'Admin\StationDataController@update', 'middleware' => 'permission:can_edit_station_data'));
+    Route::delete('admin/station_data/{station_data_id}/destroy', array('as' => 'admin_station_data_destroy', 'uses' => 'Admin\StationDataController@destroy', 'middleware' => 'permission:can_delete_station_data'));
 });
