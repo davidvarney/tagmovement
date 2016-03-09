@@ -43,12 +43,12 @@ Route::group(['middleware' => ['web']], function () {
     // Admin Routes
 
     // Admin Users
-    Route::get('admin/users', array('as' => 'admin_users_index', 'uses' => 'Admin\UsersController@index'));
-    Route::get('admin/users/create', array('as' => 'admin_users_create', 'uses' => 'Admin\UsersController@create'));
-    Route::post('admin/users/store', array('as' => 'admin_users_store', 'uses' => 'Admin\UsersController@store'));
-    Route::get('admin/users/{user_id}/edit', array('as' => 'admin_users_edit', 'uses' => 'Admin\UsersController@edit'));
-    Route::put('admin/users/{user_id}/update', array('as' => 'admin_users_update', 'uses' => 'Admin\UsersController@update'));
-    Route::delete('admin/users/{user_id}/destroy', array('as' => 'admin_users_destroy', 'uses' => 'Admin\UsersController@destroy'));
+    Route::get('admin/users', array('as' => 'admin_users_index', 'uses' => 'Admin\UsersController@index', 'middleware' => 'permission:can_view_users'));
+    Route::get('admin/users/create', array('as' => 'admin_users_create', 'uses' => 'Admin\UsersController@create', 'middleware' => 'permission:can_add_users'));
+    Route::post('admin/users/store', array('as' => 'admin_users_store', 'uses' => 'Admin\UsersController@store', 'middleware' => 'permission:can_add_users'));
+    Route::get('admin/users/{user_id}/edit', array('as' => 'admin_users_edit', 'uses' => 'Admin\UsersController@edit', 'middleware' => 'permission:can_edit_users'));
+    Route::put('admin/users/{user_id}/update', array('as' => 'admin_users_update', 'uses' => 'Admin\UsersController@update', 'middleware' => 'permission:can_edit_users'));
+    Route::delete('admin/users/{user_id}/destroy', array('as' => 'admin_users_destroy', 'uses' => 'Admin\UsersController@destroy', 'middleware' => 'permission:can_delete_users'));
 
     // Admin Registrations
     //Route::get('admin/users', array('as' => 'admin_users_index', 'uses' => 'Admin\UsersController@index'));
