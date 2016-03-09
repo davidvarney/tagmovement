@@ -58,6 +58,14 @@ Route::group(['middleware' => ['web']], function () {
     Route::put('admin/events/{event_id}/update', array('as' => 'admin_events_update', 'uses' => 'Admin\EventsController@update', 'middleware' => 'permission:can_edit_events'));
     Route::delete('admin/events/{event_id}/destroy', array('as' => 'admin_events_destroy', 'uses' => 'Admin\EventsController@destroy', 'middleware' => 'permission:can_delete_events'));
 
+    // Admin Stations
+    Route::get('admin/stations', array('as' => 'admin_stations_index', 'uses' => 'Admin\StationsController@index', 'middleware' => 'permission:can_view_stations'));
+    Route::get('admin/stations/create', array('as' => 'admin_stations_create', 'uses' => 'Admin\StationsController@create', 'middleware' => 'permission:can_add_stations'));
+    Route::post('admin/stations/store', array('as' => 'admin_stations_store', 'uses' => 'Admin\StationsController@store', 'middleware' => 'permission:can_add_stations'));
+    Route::get('admin/stations/{station_id}/edit', array('as' => 'admin_stations_edit', 'uses' => 'Admin\StationsController@edit', 'middleware' => 'permission:can_edit_stations'));
+    Route::put('admin/stations/{station_id}/update', array('as' => 'admin_stations_update', 'uses' => 'Admin\StationsController@update', 'middleware' => 'permission:can_edit_stations'));
+    Route::delete('admin/stations/{station_id}/destroy', array('as' => 'admin_stations_destroy', 'uses' => 'Admin\StationsController@destroy', 'middleware' => 'permission:can_delete_stations'));
+
     // Admin Registrations
     //Route::get('admin/users', array('as' => 'admin_users_index', 'uses' => 'Admin\UsersController@index'));
 });
