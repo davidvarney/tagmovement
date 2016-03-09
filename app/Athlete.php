@@ -21,12 +21,12 @@ class Athlete extends Model
         RELATIONSHIPS
      */
 
-    public function event(){
+    public function registration(){
         return $this->belongsTo('App\Registration');
     }
 
     public function station_data(){
-        return $this->hasMany('App\StationData', 'station_id');
+        return $this->hasMany('App\StationData', 'athlete_id');
     }
 
     /**

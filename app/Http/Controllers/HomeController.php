@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\FormHelper;
+use App\Event;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,7 @@ class HomeController extends Controller
             'graduation_years' => FormHelper::get_graduation_years(),
             'genders' => FormHelper::get_genders(),
             'shirt_sizes' => FormHelper::get_shirt_sizes(),
+            'event_id' => Event::first()->id,
         ));
     }
 }

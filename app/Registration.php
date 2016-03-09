@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use App\Athlete;
+
 class Registration extends Model
 {
     protected $table = 'registrations';
@@ -70,8 +72,8 @@ class Registration extends Model
         return $this->belongsTo('App\Event');
     }
 
-    public function athletes(){
-        return $this->hasMany('App\Athlete', 'registration_id');
+    public function athlete(){
+        return $this->hasOne('App\Athlete', 'registration_id');
     }
 
     /**

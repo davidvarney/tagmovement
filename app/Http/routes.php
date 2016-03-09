@@ -67,5 +67,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::delete('admin/stations/{station_id}/destroy', array('as' => 'admin_stations_destroy', 'uses' => 'Admin\StationsController@destroy', 'middleware' => 'permission:can_delete_stations'));
 
     // Admin Registrations
-    //Route::get('admin/users', array('as' => 'admin_users_index', 'uses' => 'Admin\UsersController@index'));
+    Route::get('admin/registrations', array('as' => 'admin_registrations_index', 'uses' => 'Admin\RegistrationController@index', 'middleware' => 'permission:can_view_registrations'));
+
+    // Admin Athletes
+    Route::get('admin/athletes', array('as' => 'admin_athletes_index', 'uses' => 'Admin\AthletesController@index', 'middleware' => 'permission:can_view_athletes'));
+    Route::post('admin/athletes/store', array('as' => 'admin_athletes_store', 'uses' => 'Admin\AthletesController@store', 'middleware' => 'permission:can_add_athletes'));
 });

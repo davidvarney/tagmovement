@@ -14,6 +14,7 @@
                 <hr>
                 <div class="row">
                     {!! Form::open(array('route' => 'registration_store', 'method' => 'POST', 'name' => 'sentMessage', 'id' => 'registrationForm')) !!}
+                        {!! Form::hidden('event_id', $event_id) !!}
                         <div class="row">
                             <div class="col-md-8 col-md-offset-2">
                                 <h2>Athlete's Basic Info</h2>
