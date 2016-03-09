@@ -13,7 +13,7 @@ class Station extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'measurement', 'type',
+        'event_id', 'name', 'measurement', 'type',
     ];
 
     /**
@@ -22,4 +22,20 @@ class Station extends Model
      * @var array
      */
     protected $hidden = [];
+
+    /**
+        RELATIONSHIPS
+     */
+
+    public function event(){
+        return $this->belongsTo('App\Event');
+    }
+
+    public function station_data(){
+        return $this->hasMany('App\StationData', 'station_id');
+    }
+
+    /**
+        METHODS
+     */
 }

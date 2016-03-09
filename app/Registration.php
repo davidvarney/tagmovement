@@ -11,6 +11,7 @@ class Registration extends Model
     protected $fillable = [
         'first_name',
         'last_name',
+        'event_id',
         'address_1',
         'address_2',
         'city',
@@ -60,4 +61,20 @@ class Registration extends Model
     ];
 
     protected $guarded = ['id'];
+
+    /**
+        RELATIONSHIPS
+     */
+
+    public function event(){
+        return $this->belongsTo('App\Event');
+    }
+
+    public function athletes(){
+        return $this->hasMany('App\Athlete', 'registration_id');
+    }
+
+    /**
+        METHODS
+     */
 }
