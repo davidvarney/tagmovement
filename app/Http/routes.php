@@ -27,6 +27,7 @@
 */
 
 Route::group(['middleware' => ['web']], function () {
+    Route::get('register', array('uses' => 'HomeController@home'));
     Route::auth();
     /*Route::get('/', function () {
         return view('layouts.app');
