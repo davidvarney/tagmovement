@@ -31,7 +31,7 @@
                                     <td>
                                         <ul class="list-inline">
                                             @if($registration->athlete()->first())
-                                                <li>Athlete Already Created</li>
+                                                <li>Athlete/Name Tag ID: {!! $registration->athlete()->first()->id !!}</li>
                                             @else
                                                 <li>
                                                     {!! Form::open(array('method' => 'post', 'route' => 'admin_athletes_store')) !!}
