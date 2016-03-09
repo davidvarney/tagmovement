@@ -38,7 +38,8 @@ class StationDataController extends Controller
         return view('admin.station_data.index', array(
             'title' => 'Admin: Station Data',
             'stations' => $stations,
-            'event_id' => $event_id
+            'event_id' => $event_id,
+            'events'    => Event::lists('name', 'id')
         ));
     }
 

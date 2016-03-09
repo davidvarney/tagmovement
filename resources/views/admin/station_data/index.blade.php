@@ -5,7 +5,16 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">{!! $title !!}</div>
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <span class="pull-left">{!! $title !!}</span>
+                            {!! Form::open(array('route' => 'admin_station_data_index', 'method' => 'GET', 'id' => 'admin_station_data_event_select_form')) !!}
+                                {!! Form::select('event_id', $events, $event_id, array('class' => 'form-control', 'id' => 'admin_station_data_event_select')) !!}
+                            {!! Form::close() !!}
+                        </div>
+                    </div>
+                </div>
 
                 <div class="panel-body">
                     @foreach ($stations as $station)
@@ -71,4 +80,11 @@
         </div>
     </div>
 </div>
+@endsection
+@section('page_js')
+    <script type="text/javascript">
+        jQuery("#admin_station_data_select").change(function () {
+            jQuery("#admin_station_data_select_form").submit();
+        });
+    </script>
 @endsection
