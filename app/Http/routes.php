@@ -39,4 +39,17 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('contact', array('as' => 'contact_post', 'uses' => 'ContactController@store'));
     // REGISTRATION FORM
     Route::post('registration', array('as' => 'registration_store', 'uses' => 'RegistrationController@store'));
+
+    // Admin Routes
+
+    // Admin Users
+    Route::get('admin/users', array('as' => 'admin_users_index', 'uses' => 'Admin\UsersController@index'));
+    Route::get('admin/users/create', array('as' => 'admin_users_create', 'uses' => 'Admin\UsersController@create'));
+    Route::post('admin/users/store', array('as' => 'admin_users_store', 'uses' => 'Admin\UsersController@store'));
+    Route::get('admin/users/{user_id}/edit', array('as' => 'admin_users_edit', 'uses' => 'Admin\UsersController@edit'));
+    Route::put('admin/users/{user_id}/update', array('as' => 'admin_users_update', 'uses' => 'Admin\UsersController@update'));
+    Route::delete('admin/users/{user_id}/destroy', array('as' => 'admin_users_destroy', 'uses' => 'Admin\UsersController@destroy'));
+
+    // Admin Registrations
+    //Route::get('admin/users', array('as' => 'admin_users_index', 'uses' => 'Admin\UsersController@index'));
 });
