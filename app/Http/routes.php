@@ -81,4 +81,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('admin/station_data/{station_data_id}/edit', array('as' => 'admin_station_data_edit', 'uses' => 'Admin\StationDataController@edit', 'middleware' => 'permission:can_edit_station_data'));
     Route::put('admin/station_data/{station_data_id}/update', array('as' => 'admin_station_data_update', 'uses' => 'Admin\StationDataController@update', 'middleware' => 'permission:can_edit_station_data'));
     Route::delete('admin/station_data/{station_data_id}/destroy', array('as' => 'admin_station_data_destroy', 'uses' => 'Admin\StationDataController@destroy', 'middleware' => 'permission:can_delete_station_data'));
+
+    // Admin Newsletter
+    Route::get('admin/newsletter', array('as' => 'admin_newsletter_index', 'uses' => 'Admin\NewsletterController@index', 'middleware' => 'permission:can_view_newsletter'));
 });

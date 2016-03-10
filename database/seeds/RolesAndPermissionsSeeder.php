@@ -52,7 +52,11 @@ class RolesAndPermissionsSeeder extends Seeder {
                 'can_edit_station_data',
                 'can_add_station_data',
                 'can_delete_station_data',
-                'can_view_station_data'
+                'can_view_station_data',
+                'can_edit_newsletter',
+                'can_add_newsletter',
+                'can_delete_newsletter',
+                'can_view_newsletter'
             ) // optional
         ],
 
@@ -83,7 +87,11 @@ class RolesAndPermissionsSeeder extends Seeder {
                 'can_edit_station_data',
                 'can_add_station_data',
                 'can_delete_station_data',
-                'can_view_station_data'
+                'can_view_station_data',
+                'can_edit_newsletter',
+                'can_add_newsletter',
+                'can_delete_newsletter',
+                'can_view_newsletter'
             ) // optional
         ],
 
@@ -136,7 +144,11 @@ class RolesAndPermissionsSeeder extends Seeder {
         'can_edit_station_data' => [],
         'can_add_station_data' => [],
         'can_delete_station_data' => [],
-        'can_view_station_data' => []
+        'can_view_station_data' => [],
+        'can_edit_newsletter' => [],
+        'can_add_newsletter' => [],
+        'can_delete_newsletter' => [],
+        'can_view_newsletter' => []
     ];
 
 
