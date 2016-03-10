@@ -60,6 +60,12 @@ class StationDataController extends Controller
 
         $station_data = StationData::create($data);
 
+        if ($station_data->id) {
+            \Flash::success("Saved! Athlete ID: " . $station_data->athlete_id . ' Data: ' . $station_data->data);
+        } else {
+            \Flash::error("Something happened and we could not save this data! Please seek assistance!");
+        }
+
         return redirect()->back();
     }
 
@@ -70,6 +76,8 @@ class StationDataController extends Controller
         $data = $request->all();
 
         $station_data->update($data);
+
+        \Flash::success("Updated! Athlete ID: " . $station_data->athlete_id . ' Data: ' . $station_data->data);
 
         return redirect()->back();
     }
