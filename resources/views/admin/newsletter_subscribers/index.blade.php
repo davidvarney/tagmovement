@@ -23,29 +23,34 @@
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Unsubscribe?</th>
+                                <th>Unsubscribe</th>
+                                <th>Remove</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($newsletter_subscribers as $newsletter_subscriber)
-                                <tr class="{!! ($newsletter_subscriber->unsubscribe > 0) ? 'warning' : '' !!}">
+                                <tr class="{!! ($newsletter_subscriber->unsubscribe) ? 'warning' : '' !!}">
                                     <td>{!! $newsletter_subscriber->id !!}</td>
                                     <td>{!! $newsletter_subscriber->first_name . ' ' . $newsletter_subscriber->last_name !!}</td>
                                     <td>{!! $newsletter_subscriber->email !!}</td>
                                     <td>
                                         <ul class="list-inline">
                                             <li>
-                                                {!! Form::open(array('method' => 'delete', 'route' => array('admin_newsletter_subscribers_destroy', $newsletter_subscriber->id))) !!}
-                                                    {!! Form::button('<i class="fa fa-times fa-fw"></i>', array('type' => 'submit', 'class' => 'btn btn-link', 'data-confirm' => "This can't be undeone! Proceed?")) !!}
-                                                {!! Form::close() !!}
-                                            </li>
-                                            <li>
                                                 {!! Form::open(array('method' => 'post', 'route' => array('admin_newsletter_subscribers_unsubscribe', $newsletter_subscriber->id))) !!}
-                                                    @if($newsletter_subscriber->unsubscribe > 0)
+                                                    @if((int)$newsletter_subscriber->unsubscribe == 0)
                                                         {!! Form::button('<i class="fa fa-user-times fa-fw"></i>', array('type' => 'submit', 'class' => 'btn btn-link')) !!}
                                                     @else
                                                         {!! Form::button('<i class="fa fa-user-plus fa-fw"></i>', array('type' => 'submit', 'class' => 'btn btn-link')) !!}
                                                     @endif
+                                                {!! Form::close() !!}
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul class="list-inline">
+                                            <li>
+                                                {!! Form::open(array('method' => 'delete', 'route' => array('admin_newsletter_subscribers_destroy', $newsletter_subscriber->id))) !!}
+                                                    {!! Form::button('<i class="fa fa-times fa-fw"></i>', array('type' => 'submit', 'class' => 'btn btn-link', 'data-confirm' => "This can't be undeone! Proceed?")) !!}
                                                 {!! Form::close() !!}
                                             </li>
                                         </ul>

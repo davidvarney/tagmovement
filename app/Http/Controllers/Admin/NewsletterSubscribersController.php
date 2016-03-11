@@ -127,4 +127,19 @@ class NewsletterSubscribersController extends Controller
 
         return redirect()->back();
     }
+
+    public function destroy($newsletter_subscriber_id)
+    {
+        $newsletter_subscriber = NewsletterSubscriber::find($newsletter_subscriber_id);
+
+        if ($newsletter_subscriber->unsubscribe == 0) {
+            Newsletter::unsubscribe($newsletter_subscriber->email);
+        }
+
+        $newsletter_subscriber->delete();
+
+        \Flash::success("Subscriber has been deleted!");
+
+        return redirect()->back();
+    }
 }
