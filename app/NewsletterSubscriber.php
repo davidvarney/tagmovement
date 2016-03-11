@@ -18,8 +18,7 @@ class NewsletterSubscriber extends Model
         'first_name',
         'last_name',
         'email',
-        'unsubscribe',
-        'mailchimp_list_user_id'
+        'unsubscribe'
     ];
 
     /**

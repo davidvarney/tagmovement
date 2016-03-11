@@ -19,7 +19,6 @@ class CreateNewsletterSubscribersTable extends Migration
             $table->string('last_name');
             $table->string('email');
             $table->boolean('unsubscribe')->default(0);
-            $table->string('mailchimp_list_user_id');
             $table->timestamps();
         });
     }
