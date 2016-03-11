@@ -51,14 +51,14 @@ class NewsletterSubscribersController extends Controller
                         'last_name'         => $registration->last_name,
                         'email'             => str_replace(" ", '', $registration->email)
                     ));
-                    // Athlete - then officially add them to MailChimp
-                    if (WebsiteHelper::mailchimp_subscriber_exists($athlete_subscriber->email)) {
-                        Newsletter::updateMember($athlete_subscriber->email, array('FNAME' => $athlete_subscriber->first_name, 'LNAME' => $athlete_subscriber->last_name));
-                    } else {
-                        Newsletter::subscribe($athlete_subscriber->email, array('FNAME' => $athlete_subscriber->first_name, 'LNAME' => $athlete_subscriber->last_name));
-                    }
-                    $creation_count++;
                 }
+                // Athlete - then officially add them to MailChimp
+                if (WebsiteHelper::mailchimp_subscriber_exists($athlete_subscriber->email)) {
+                    Newsletter::updateMember($athlete_subscriber->email, array('FNAME' => $athlete_subscriber->first_name, 'LNAME' => $athlete_subscriber->last_name));
+                } else {
+                    Newsletter::subscribe($athlete_subscriber->email, array('FNAME' => $athlete_subscriber->first_name, 'LNAME' => $athlete_subscriber->last_name));
+                }
+                $creation_count++;
             }
 
             if (!filter_var($registration->guardian_1_email, FILTER_VALIDATE_EMAIL) === false) {
@@ -71,14 +71,15 @@ class NewsletterSubscribersController extends Controller
                         'last_name'         => $registration->guardian_1_last_name,
                         'email'             => str_replace(" ", '', $registration->guardian_1_email)
                     ));
-                    // Guardian 1 - then officially add them to MailChimp
-                    if (WebsiteHelper::mailchimp_subscriber_exists($guardian_1_subscriber->email)) {
-                        Newsletter::updateMember($guardian_1_subscriber->email, array('FNAME' => $guardian_1_subscriber->first_name, 'LNAME' => $guardian_1_subscriber->last_name));
-                    } else {
-                        Newsletter::subscribe($guardian_1_subscriber->email, array('FNAME' => $guardian_1_subscriber->first_name, 'LNAME' => $guardian_1_subscriber->last_name));
-                    }
-                    $creation_count++;
                 }
+
+                // Guardian 1 - then officially add them to MailChimp
+                if (WebsiteHelper::mailchimp_subscriber_exists($guardian_1_subscriber->email)) {
+                    Newsletter::updateMember($guardian_1_subscriber->email, array('FNAME' => $guardian_1_subscriber->first_name, 'LNAME' => $guardian_1_subscriber->last_name));
+                } else {
+                    Newsletter::subscribe($guardian_1_subscriber->email, array('FNAME' => $guardian_1_subscriber->first_name, 'LNAME' => $guardian_1_subscriber->last_name));
+                }
+                $creation_count++;
             }
             // Only add the guardian 2 if they have an email present
             if (!filter_var($registration->guardian_2_email, FILTER_VALIDATE_EMAIL) === false) {
@@ -91,14 +92,15 @@ class NewsletterSubscribersController extends Controller
                         'last_name'         => $registration->guardian_2_last_name,
                         'email'             => str_replace(" ", '', $registration->guardian_2_email)
                     ));
-                    // Guardian 2 - then officially add them to MailChimp
-                    if (WebsiteHelper::mailchimp_subscriber_exists($guardian_2_subscriber->email)) {
-                        Newsletter::updateMember($guardian_2_subscriber->email, array('FNAME' => $guardian_2_subscriber->first_name, 'LNAME' => $guardian_2_subscriber->last_name));
-                    } else {
-                        Newsletter::subscribe($guardian_2_subscriber->email, array('FNAME' => $guardian_2_subscriber->first_name, 'LNAME' => $guardian_2_subscriber->last_name));
-                    }
-                    $creation_count++;
                 }
+
+                // Guardian 2 - then officially add them to MailChimp
+                if (WebsiteHelper::mailchimp_subscriber_exists($guardian_2_subscriber->email)) {
+                    Newsletter::updateMember($guardian_2_subscriber->email, array('FNAME' => $guardian_2_subscriber->first_name, 'LNAME' => $guardian_2_subscriber->last_name));
+                } else {
+                    Newsletter::subscribe($guardian_2_subscriber->email, array('FNAME' => $guardian_2_subscriber->first_name, 'LNAME' => $guardian_2_subscriber->last_name));
+                }
+                $creation_count++;
             }
         }
 
