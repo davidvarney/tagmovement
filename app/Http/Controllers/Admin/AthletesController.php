@@ -25,6 +25,8 @@ class AthletesController extends Controller
         $data = $request->all();
         $athlete = Athlete::create($data);
 
+        \Flash::success("Athlete/Name Tag ID: " . $athlete->id);
+
         return redirect()->back();
     }
 }
