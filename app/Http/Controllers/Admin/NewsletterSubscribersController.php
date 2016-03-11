@@ -41,7 +41,7 @@ class NewsletterSubscribersController extends Controller
         $mailchimp_creation_count = 0;
         $mailchimp_update_count = 0;
         $subscriber_creation_count = 0;
-dd(WebsiteHelper::mailchimp_subscriber_exists('derecklink@hotmail.com'));
+
         foreach ($registrations as $registration) {
             // Athlete - first create the newsletter subscriber record
             if (!filter_var($registration->email, FILTER_VALIDATE_EMAIL) === false) {
