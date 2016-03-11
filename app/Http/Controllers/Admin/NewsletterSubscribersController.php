@@ -53,7 +53,7 @@ class NewsletterSubscribersController extends Controller
                         'last_name'         => $registration->last_name,
                         'email'             => str_replace(" ", '', $registration->email)
                     ));
-                    $subscriber_creation_count++
+                    $subscriber_creation_count++;
                 }
                 // Athlete - then officially add them to MailChimp
                 if (WebsiteHelper::mailchimp_subscriber_exists($athlete_subscriber->email)) {
