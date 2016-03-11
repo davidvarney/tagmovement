@@ -83,5 +83,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::delete('admin/station_data/{station_data_id}/destroy', array('as' => 'admin_station_data_destroy', 'uses' => 'Admin\StationDataController@destroy', 'middleware' => 'permission:can_delete_station_data'));
 
     // Admin Newsletter
-    Route::get('admin/newsletter', array('as' => 'admin_newsletter_index', 'uses' => 'Admin\NewsletterController@index', 'middleware' => 'permission:can_view_newsletter'));
+    Route::get('admin/newsletter_subscribers', array('as' => 'admin_newsletter_subscribers_index', 'uses' => 'Admin\NewsletterSubscribersController@index', 'middleware' => 'permission:can_view_newsletter'));
+    Route::post('admin/newsletter_subscribers/store', array('as' => 'admin_newsletter_subscribers_store', 'uses' => 'Admin\NewsletterSubscribersController@store', 'middleware' => 'permission:can_add_newsletter'));
+    Route::post('admin/newsletter_subscribers/{newsletter_subscriber_id}/unsubscribe', array('as' => 'admin_newsletter_subscribers_unsubscribe', 'uses' => 'Admin\NewsletterSubscribersController@unsubscribe', 'middleware' => 'permission:can_edit_newsletter'));
+    Route::delete('admin/newsletter_subscribers/{newsletter_subscriber_id}/delete', array('as' => 'admin_newsletter_subscribers_destroy', 'uses' => 'Admin\NewsletterSubscribersController@destroy', 'middleware' => 'permission:can_delete_newsletter'));
 });

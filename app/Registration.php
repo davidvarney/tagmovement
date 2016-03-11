@@ -59,7 +59,6 @@ class Registration extends Model
         'defensive_stats',
         'postseason_honors',
         'jersey_number'
-
     ];
 
     protected $guarded = ['id'];
@@ -74,6 +73,11 @@ class Registration extends Model
 
     public function athlete(){
         return $this->hasOne('App\Athlete', 'registration_id');
+    }
+
+    public function newsletter_subscribers()
+    {
+        return $this->hasMany('App\NewsletterSubscriber', 'registration_id');
     }
 
     /**

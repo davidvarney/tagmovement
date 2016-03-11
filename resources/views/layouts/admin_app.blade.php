@@ -54,7 +54,7 @@
                         <li><a href="{{ url('/admin/athletes') }}">Athletes</a></li>
                         @if (Auth::user()->hasRole(['admin', 'manager']))
                             <li><a href="{{ url('/admin/events') }}">Events</a></li>
-                            <li><a href="{{ url('/admin/newsletter') }}">Newsletter</a></li>
+                            <li><a href="{{ url('/admin/newsletter_subscribers') }}">Newsletter</a></li>
                         @endif
                         <li><a href="{{ url('/admin/registrations') }}">Registrations</a></li>
                         <li class="dropdown">
