@@ -29,7 +29,7 @@
                         </thead>
                         <tbody>
                             @foreach ($newsletter_subscribers as $newsletter_subscriber)
-                                <tr class="{!! ((int)$newsletter_subscriber->unsubscribe == 1) ? 'warning' : '' !!}">
+                                <tr class="{!! ((int)$newsletter_subscriber->unsubscribe == 1) ? 'danger' : '' !!}">
                                     <td>{!! $newsletter_subscriber->id !!}</td>
                                     <td>{!! $newsletter_subscriber->first_name . ' ' . $newsletter_subscriber->last_name !!}</td>
                                     <td>{!! $newsletter_subscriber->email !!}</td>
