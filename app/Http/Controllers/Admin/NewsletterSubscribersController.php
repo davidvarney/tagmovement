@@ -42,41 +42,46 @@ class NewsletterSubscribersController extends Controller
 
         foreach ($registrations as $registration) {
             // Athlete - first create the newsletter subscriber record
-            $athlete_check = NewsletterSubscriber::where('email', '=', str_replace(" ", '', $registration->email))->first();
-            if (! $athlete_check) {
-                $athlete_subscriber = NewsletterSubscriber::create(array(
-                    'registration_id'   => $registration->id,
-                    'first_name'        => $registration->first_name,
-                    'last_name'         => $registration->last_name,
-                    'email'             => str_replace(" ", '', $registration->email)
-                ));
-                // Athlete - then officially add them to MailChimp
-                if (WebsiteHelper::mailchimp_subscriber_exists($athlete_subscriber->email)) {
-                    Newsletter::updateMember($athlete_subscriber->email, array('FNAME' => $athlete_subscriber->first_name, 'LNAME' => $athlete_subscriber->last_name));
-                } else {
-                    Newsletter::subscribe($athlete_subscriber->email, array('FNAME' => $athlete_subscriber->first_name, 'LNAME' => $athlete_subscriber->last_name));
+            if (!filter_var($registration->email, FILTER_VALIDATE_EMAIL) === false) {
+                $athlete_check = NewsletterSubscriber::where('email', '=', str_replace(" ", '', $registration->email))->first();
+                if (! $athlete_check) {
+                    $athlete_subscriber = NewsletterSubscriber::create(array(
+                        'registration_id'   => $registration->id,
+                        'first_name'        => $registration->first_name,
+                        'last_name'         => $registration->last_name,
+                        'email'             => str_replace(" ", '', $registration->email)
+                    ));
+                    // Athlete - then officially add them to MailChimp
+                    if (WebsiteHelper::mailchimp_subscriber_exists($athlete_subscriber->email)) {
+                        Newsletter::updateMember($athlete_subscriber->email, array('FNAME' => $athlete_subscriber->first_name, 'LNAME' => $athlete_subscriber->last_name));
+                    } else {
+                        Newsletter::subscribe($athlete_subscriber->email, array('FNAME' => $athlete_subscriber->first_name, 'LNAME' => $athlete_subscriber->last_name));
+                    }
+                    $creation_count++;
                 }
-                $creation_count++;
             }
-            // Guardian 1 - first create the newsletter subscriber record
-            $guardian_1_check = NewsletterSubscriber::where('email', '=', str_replace(" ", '', $registration->guardian_1_email))->first();
-            if (! $guardian_1_check) {
-                $guardian_1_subscriber = NewsletterSubscriber::create(array(
-                    'registration_id'   => $registration->id,
-                    'first_name'        => $registration->guardian_1_first_name,
-                    'last_name'         => $registration->guardian_1_last_name,
-                    'email'             => str_replace(" ", '', $registration->guardian_1_email)
-                ));
-                // Guardian 1 - then officially add them to MailChimp
-                if (WebsiteHelper::mailchimp_subscriber_exists($guardian_1_subscriber->email)) {
-                    Newsletter::updateMember($guardian_1_subscriber->email, array('FNAME' => $guardian_1_subscriber->first_name, 'LNAME' => $guardian_1_subscriber->last_name));
-                } else {
-                    Newsletter::subscribe($guardian_1_subscriber->email, array('FNAME' => $guardian_1_subscriber->first_name, 'LNAME' => $guardian_1_subscriber->last_name));
+
+            if (!filter_var($registration->guardian_1_email, FILTER_VALIDATE_EMAIL) === false) {
+                // Guardian 1 - first create the newsletter subscriber record
+                $guardian_1_check = NewsletterSubscriber::where('email', '=', str_replace(" ", '', $registration->guardian_1_email))->first();
+                if (! $guardian_1_check) {
+                    $guardian_1_subscriber = NewsletterSubscriber::create(array(
+                        'registration_id'   => $registration->id,
+                        'first_name'        => $registration->guardian_1_first_name,
+                        'last_name'         => $registration->guardian_1_last_name,
+                        'email'             => str_replace(" ", '', $registration->guardian_1_email)
+                    ));
+                    // Guardian 1 - then officially add them to MailChimp
+                    if (WebsiteHelper::mailchimp_subscriber_exists($guardian_1_subscriber->email)) {
+                        Newsletter::updateMember($guardian_1_subscriber->email, array('FNAME' => $guardian_1_subscriber->first_name, 'LNAME' => $guardian_1_subscriber->last_name));
+                    } else {
+                        Newsletter::subscribe($guardian_1_subscriber->email, array('FNAME' => $guardian_1_subscriber->first_name, 'LNAME' => $guardian_1_subscriber->last_name));
+                    }
+                    $creation_count++;
                 }
-                $creation_count++;
             }
             // Only add the guardian 2 if they have an email present
-            if (!empty($registration->guardian_2_email)) {
+            if (!filter_var($registration->guardian_2_email, FILTER_VALIDATE_EMAIL) === false) {
                 $guardian_2_check = NewsletterSubscriber::where('email', '=', str_replace(" ", '', $registration->guardian_2_email))->first();
                 if (! $guardian_2_check) {
                     // Guardian 2 - first create the newsletter subscriber record
