@@ -6,8 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 use Mailchimp;
 
-class WebsiteHelper extends Model
+class MailchimpHelper extends Mailchimp
 {
+    public function __construct()
+    {
+        // BEGIN - ADDED BY TAG MOVEMENT David Varney <davidvarney@gmail.com>
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    }
     /**
      * Get an array of subscribers for a given list id.
      * $list_id default: env('MAILCHIMP_LIST_ID')
