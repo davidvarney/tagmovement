@@ -90,7 +90,7 @@ class WebsiteHelper extends Model
 
             $subscribers = $mailchimp->lists->memberInfo($list_id, $email);
 
-            if (array_key_exists('data', $subscribers) && count($subscribers['data']) > 0) {
+            if (array_key_exists('data', $subscribers) && count($subscribers['data']) > 0 && $subscribers['data'][0]['status'] !== 'pending') {
                 return true;
             }
         }
