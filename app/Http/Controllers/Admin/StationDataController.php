@@ -87,7 +87,7 @@ class StationDataController extends Controller
         $station_data = StationData::find($station_data_id);
 
         return view('admin.station_data.edit', array(
-            //'title' => 'Admin: Station Data Edit - ' . $station_data->station->name . ' (Event: ' . $station_data->station->event->name . ')',
+            'title' => 'Admin: Station Data Edit - ' . $station_data->station->name . ' (Event: ' . $station_data->station->event->name . ')',
             'station_data'  => $station_data,
         ));
     }
