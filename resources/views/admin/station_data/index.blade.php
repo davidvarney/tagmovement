@@ -42,8 +42,8 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @if ($station->station_data()->orderBy('athlete_id', 'asc')->get()->count() > 0)
-                                                    @foreach ($station->station_data()->get() as $station_data)
+                                                @if ($station->station_data()->get()->count() > 0)
+                                                    @foreach ($station->station_data()->orderBy('athlete_id', 'asc')->get() as $station_data)
                                                         <tr>
                                                             <td>{!! $station_data->athlete->id !!}</td>
                                                             <td>{!! $station_data->athlete->registration->first_name . ' ' . $station_data->athlete->registration->last_name !!}</td>
