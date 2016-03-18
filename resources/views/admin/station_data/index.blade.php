@@ -34,7 +34,7 @@
                                         <table class="table table-condensed table-bordered table-striped">
                                             <thead>
                                                 <tr>
-                                                    <th>ID</th>
+                                                    <th>Athlete ID</th>
                                                     <th>Athlete Name</th>
                                                     <th>Data</th>
                                                     <th>Created</th>
@@ -45,7 +45,7 @@
                                                 @if ($station->station_data()->get()->count() > 0)
                                                     @foreach ($station->station_data()->get() as $station_data)
                                                         <tr>
-                                                            <td>{!! $station_data->id !!}</td>
+                                                            <td>{!! $station_data->athlete->id !!}</td>
                                                             <td>{!! $station_data->athlete->registration->first_name . ' ' . $station_data->athlete->registration->last_name !!}</td>
                                                             <td>{!! $station_data->data !!}</td>
                                                             <td>{!! date("m/d/Y @ H:i:s", strtotime($station_data->created_at)) !!}</td>
