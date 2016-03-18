@@ -42,7 +42,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @if ($station->station_data()->get()->count() > 0)
+                                                @if ($station->station_data()->orderBy('athlete_id', 'asc')->get()->count() > 0)
                                                     @foreach ($station->station_data()->get() as $station_data)
                                                         <tr>
                                                             <td>{!! $station_data->athlete->id !!}</td>

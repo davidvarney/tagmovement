@@ -9,7 +9,7 @@
 
                 <div class="panel-body">
                     {!! Form::open(array('route' => array('admin_station_data_update', $station_data->id), 'method' => 'PUT', 'class' => 'form-horizontal', 'role' => 'form')) !!}
-                        {!! Form::hidden('station_id', $station_data->id) !!}
+                        {!! Form::hidden('station_id', $station_data->station->id) !!}
                         <div class="form-group{!! $errors->has('athlete_id') ? ' has-error' : '' !!}">
                             {!! Form::label('athlete_id', 'Athlete ID', array('class' => 'control-label col-md-4')) !!}
                             <div class="col-md-6">
