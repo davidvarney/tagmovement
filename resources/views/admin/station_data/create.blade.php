@@ -46,3 +46,9 @@
     </div>
 </div>
 @endsection
+
+@section ('page_js')
+    <script type="text/javascript">
+        jQuery("#athlete_id").focus();
+    </script>
+@endsection
